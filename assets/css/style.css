@@ -1,0 +1,93 @@
+/* Edit by Septimus Liu */
+
+
+/* Common style */
+a:hover {
+    color: #0779CB;
+}
+
+/* Index page layout */
+
+#content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	backface-visibility: hidden;
+}
+
+.container-main {
+	position: relative;
+	height: 100%;
+}
+
+.cover-side {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 30%;
+	height: 100%;
+}
+
+.cover-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.cover-container {
+	position: absolute;
+	bottom: 0;
+	padding: 50px 10% 10%;
+	width: 100%;
+	color: #fff;
+	text-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+
+.wrapper-posts-side {
+	position: absolute;
+	left: 30%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.posts-side {
+	position: relative;
+	padding: 20px 5% 20px 50px;
+}
+
+/* Post list overrides */
+.post {
+	width: 90%;
+	margin: 2rem auto;
+}
+
+body:not(.post-template) .post-title {
+	font-size: 3rem;
+}
+
+/* Justification for sceen */
+@media only screen and (max-width: 700px) {
+	.cover-side {
+		width: 100%;
+		height: 30%;
+		min-height: 300px;
+	}
+
+	.wrapper-posts-side {
+		position: relative;
+		left: 0;
+	}
+
+	.posts-side {
+		padding: 20px 20px;
+	}
+}
+
+
