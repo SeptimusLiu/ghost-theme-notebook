@@ -118,32 +118,32 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 	padding: 20px 5% 20px 50px;
 }
 
-/* Post list overrides */
-.post {
-	width: 90%;
-	margin: 2rem auto;
-}
-
-body:not(.post-template) .post-title {
-	font-size: 3rem;
-}
-
 /* Navigation drawers */
 .nav-drawer {
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 1099;
-	height: 70px;
+	width: 60px;
+ 	height: 60px;
 	padding: 10px 10%;
 }
 
+.nav-drawer a {
+	outline:none;
+}
+
 a.nav-button {
+	display: block;
+	height: 100%;
+	width: 100%;
+	text-align: center;
 	text-decoration: none;
 }
 
 .burger {
-	font-size: 3.4rem
+	font-size: 3.4rem;
+	line-height: 60px;
 }
 
 .nav-container {
@@ -153,7 +153,6 @@ a.nav-button {
 	z-index: 99;
 	width: 20%;
 	height: 100%;
-	background: inherit; 
 	background-color: rgba(40, 45, 50, 0.98);
 	transition: left .5s ease-in-out;
 }
@@ -221,6 +220,69 @@ a.nav-button {
 .nav-item:hover a {
 	color: #EFEFEF;
 	transition: color .3s;
+}
+
+/* Posts style */
+.post {
+	width: 90%;
+	margin: 2rem auto;
+}
+
+body:not(.post-template) .post-title {
+	font-size: 3rem;
+	/*letter-spacing: -3px;*/
+}
+
+.post-template .post-header {
+	margin-bottom: 2rem;
+}
+
+.post-container {
+	position: relative;
+	height: 100%;
+}
+
+.post-container {
+	padding-top: 6rem;
+}
+
+.post-container .nav-drawer {
+	position: fixed;
+	top: 65px;
+	left: 0;
+	z-index: 99;
+	transition: opacity .5s;
+}
+
+.post-container a.nav-button {
+	background-color: rgba(255,255,255,.9);
+	border: #9EABB3 2px solid;
+	border-radius: 50%;
+	transition: background-color .3s;
+}
+
+.post-container a:hover.nav-button {
+	color: #fff;
+	background-color: #077AC7;
+	transition: background-color .3s, color .3s;
+}
+
+.post-container.nav-drawer-opened .nav-drawer {
+	opacity: 0;
+	transition: opacity .5s;
+}
+
+.post-container .nav-container {
+	position: fixed;
+	left: -20%;
+	/*width: 0;*/
+	transition: left .5s ease-in-out;
+}
+
+.post-container.nav-drawer-opened .nav-container {
+	left: 0;
+	/*width: 20%;*/
+	transition: left .5s ease-in-out;
 }
 
 /*  Footer */
@@ -321,6 +383,15 @@ a.nav-button {
 
 	.nav-item:hover:after {
 		display: none;
+	}
+
+	.post-container .nav-drawer {
+		display: none;
+	}
+
+	.post-container .nav-container {
+		top: 0;
+		left: 0;
 	}
 }
 

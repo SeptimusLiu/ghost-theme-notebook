@@ -59,7 +59,7 @@
 
         
         $("body").on("click", function() {
-            $(".main-container").removeClass("nav-drawer-opened");
+            $("main").children("[class*='container']").removeClass("nav-drawer-opened");
         });
 
         $(".nav-container").on("click", function(e) {
@@ -67,7 +67,7 @@
         });
 
         $(".nav-button").on("click", function() {
-            $(".main-container").toggleClass("nav-drawer-opened");
+            $("main").children("[class*='container']").toggleClass("nav-drawer-opened");
             return false;
         });
 
