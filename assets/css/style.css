@@ -345,6 +345,10 @@ body:not(.post-template) .post-title {
 	white-space: nowrap;
 }
 
+.post-footer .share a {
+	margin-right: 1rem;
+}
+
 /* Tag */
 .tag-header {
 	margin: 4rem auto;

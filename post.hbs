@@ -5,20 +5,6 @@
 
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
-
-<!-- <header class="main-header post-head {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
-    <nav class="main-nav {{#if image}}overlay{{/if}} clearfix">
-        {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-        {{#if @blog.navigation}}
-            <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-        {{/if}}
-    </nav>
-    <nav class="nav-drawer">
-                {{#if @blog.navigation}}
-                    <a class="nav-button" href="#"><span class="burger">&#9776;</span></a>
-                {{/if}}
-    </nav>
-</header> -->
 <main class="content" role="main">
 
     <div class="post-container">
@@ -59,13 +45,15 @@
                 {{/if}}
 
                 <section class="author">
-                    <h4><a href="{{url}}">{{name}}</a></h4>
-
-                    {{#if bio}}
+                    <h4>Written By <a href="{{url}}">{{name}}</a></h4>
+                    <section class="post-meta">
+                        发表于  <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> {{tags prefix=" - "}}
+                    </section>
+                    <!-- {{#if bio}}
                         <p>{{bio}}</p>
                     {{else}}
                         <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                    {{/if}}
+                    {{/if}} -->
                     <div class="author-meta">
                         {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
                         {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
@@ -76,7 +64,7 @@
 
                 <section class="share">
                     <h4>Share this post</h4>
-                    <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                   <!--  <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                         <span class="hidden">Twitter</span>
                     </a>
@@ -87,7 +75,8 @@
                     <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
                        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                         <span class="hidden">Google+</span>
-                    </a>
+                    </a> -->
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></div>
                 </section>
 
                 <section itemprop="comment" class="post-comments">
@@ -106,7 +95,7 @@
 
 
 <script type="text/javascript">
-  if(CONFIG.useDisqus) {
+  if (CONFIG.useDisqus) {
     {{#post}}
     var disqus_identifier = '{{id}}';
     {{/post}}
@@ -121,5 +110,11 @@
     }
   } else {
     document.querySelector('.post-comments').remove();
+  }
+
+  if (CONFIG.useBS) {
+    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["weixin","tsina","qzone","tqq","renren"],"viewText":"分享到：","viewSize":"16"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+  } else {
+    document.querySelector('.bdsharebuttonbox').remove();
   }
 </script>
