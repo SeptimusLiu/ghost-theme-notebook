@@ -25,6 +25,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
    <!--  <link rel="stylesheet" type="text/css" href="//fonts.useso.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" /> -->
     <link href="//libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/solarized_light.min.css">
 
     <script type="text/javascript">
         {{> config}}
@@ -62,7 +63,10 @@
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script src="{{asset "js/semantic.min.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
     <script type="text/javascript">
+        hljs.initHighlightingOnLoad();
+
         if (CONFIG.useBA) {
             // Baidu Analytics
             var _hmt = _hmt || [];
