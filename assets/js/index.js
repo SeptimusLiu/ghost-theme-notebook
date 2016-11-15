@@ -57,7 +57,7 @@
         casperFullImg();
         $(window).smartresize(casperFullImg);
 
-        
+
         $("body").on("click", function() {
             $("main").children("[class*='container']").removeClass("nav-drawer-opened");
         });

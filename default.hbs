@@ -29,7 +29,7 @@
 
     <script type="text/javascript">
         {{> config}}
-        
+
         var CONFIG = {};
         CONFIG.useBA = typeof ba_ua !== 'undefined' && ba_ua !== 'DEFAULT';
         CONFIG.useBS = typeof bs !== 'undefined' && bs === 'YES';
@@ -60,8 +60,9 @@
     {{ghost_foot}}
 
     {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
     <script src="{{asset "js/semantic.min.js"}}"></script>
+    <script src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
     <script type="text/javascript">
@@ -73,7 +74,7 @@
             (function() {
               var hm = document.createElement("script");
               hm.src = "//hm.baidu.com/hm.js?" + ba_ua;
-              var s = document.getElementsByTagName("script")[0]; 
+              var s = document.getElementsByTagName("script")[0];
               s.parentNode.insertBefore(hm, s);
             })();
         }
