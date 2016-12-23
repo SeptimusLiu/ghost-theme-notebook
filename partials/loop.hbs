@@ -17,7 +17,10 @@
         {{author}}
         {{tags prefix=" on "}}
         <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        <a class="post-comment" href="{{url}}#disqus_thread" data-pjax data-disqus-identifier="{{id}}">Comments</a>
+        <a class="post-comment" href="{{url}}#duoshuo_thread">
+            <span class="ds-thread-count" data-thread-key="{{id}}"></span>
+        </a>
+        <!-- <a class="post-comment" href="{{url}}#disqus_thread" data-pjax data-disqus-identifier="{{id}}">Comments</a> -->
     </footer>
 </article>
 {{/foreach}}

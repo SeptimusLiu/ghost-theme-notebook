@@ -34,6 +34,7 @@
         CONFIG.useBA = typeof ba_ua !== 'undefined' && ba_ua !== 'DEFAULT';
         CONFIG.useBS = typeof bs !== 'undefined' && bs === 'YES';
         CONFIG.useDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'DEFAULT';
+        CONFIG.useDuoshuo = typeof duoshuo_shortname !== 'undefined' && duoshuo_shortname !== 'DEFAULT';
 
     </script>
 
@@ -76,6 +77,18 @@
               hm.src = "//hm.baidu.com/hm.js?" + ba_ua;
               var s = document.getElementsByTagName("script")[0];
               s.parentNode.insertBefore(hm, s);
+            })();
+        }
+
+        if (CONFIG.useDuoshuo) {
+            var duoshuoQuery = {short_name: duoshuo_shortname};
+            (function() {
+                var ds = document.createElement('script');
+                ds.type = 'text/javascript';ds.async = true;
+                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                ds.charset = 'UTF-8';
+                (document.getElementsByTagName('head')[0]
+                 || document.getElementsByTagName('body')[0]).appendChild(ds);
             })();
         }
 
